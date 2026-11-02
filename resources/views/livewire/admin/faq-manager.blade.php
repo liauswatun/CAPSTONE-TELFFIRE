@@ -60,7 +60,7 @@
                 <h3 class="font-fraunces text-lg text-[#14181A]">{{ $editingId ? 'Edit item' : 'Tambah item FAQ' }}</h3>
                 <button wire:click="$set('showModal', false)" type="button" class="text-[#9AA3A0] hover:text-[#14181A] text-xl leading-none">&times;</button>
             </div>
-            <form wire:submit="save" x-data="{ lang: 'id', setLang(next) { this.lang = next; this.$nextTick(() => window.dispatchEvent(new Event('resize'))); } }" class="px-6 py-5 space-y-4">
+            <form wire:submit="save" x-data="{ lang: 'id', setLang(next) { this.lang = next; this.$nextTick(() => window.dispatchEvent(new CustomEvent('tl-editor:activate', { detail: { id: next === 'id' ? 'answer' : 'answer_en' } }))); } }" class="px-6 py-5 space-y-4">
                 <div class="flex items-center gap-2">
                     <button type="button" @click="setLang('id')"
                             :class="lang === 'id' ? 'bg-[#1C3A14] text-cream' : 'text-[#5C6770] hover:text-[#14181A] border border-[#E3E6E4]'"

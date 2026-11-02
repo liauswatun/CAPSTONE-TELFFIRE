@@ -93,8 +93,8 @@ class AboutManager extends Component
             'story_body_en' => ['nullable', 'string', 'max:2000'],
             'mission_en' => ['nullable', 'string', 'max:1000'],
             'vision_en' => ['nullable', 'string', 'max:1000'],
-            'hero_image_upload' => ['nullable', 'image', 'max:2048'],
-            'story_image_upload' => ['nullable', 'image', 'max:2048'],
+            'hero_image_upload' => ['nullable', 'image', 'max:10240'],
+            'story_image_upload' => ['nullable', 'image', 'max:10240'],
         ]);
 
         $data = collect($validated)->except(['hero_image_upload', 'story_image_upload'])->toArray();

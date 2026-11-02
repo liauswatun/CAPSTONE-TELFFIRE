@@ -22,3 +22,8 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+
+# Keep local map datasets out of the website repository.
+/public/data/
+/public/data_perubahan/
+/tmp/

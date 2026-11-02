@@ -24,7 +24,7 @@ class UpdateArticleRequest extends FormRequest
             'excerpt_en' => ['nullable', 'string'],
             'content' => ['nullable', 'string'],
             'content_en' => ['nullable', 'string'],
-            'featured_image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:2048'],
+            'featured_image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:10240'],
             'link' => ['nullable', 'string', 'max:500', 'url'],
             'status' => ['required', 'in:draft,published,archived'],
             'published_at' => ['nullable', 'date'],

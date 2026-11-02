@@ -28,13 +28,7 @@
                 </p>
             </div>
 
-            <div class="flex flex-col items-end gap-4">
-                <div class="flex items-center gap-0.5 border border-white/15 rounded-full p-0.5 bg-white/5">
-                    <a href="{{ $toggle('id') }}"
-                       class="font-jetbrains-mono text-[11px] uppercase tracking-[0.14em] rounded-full px-3 py-1.5 transition-colors {{ $lang === 'id' ? 'bg-lime text-ink' : 'text-white/60 hover:text-white' }}">ID</a>
-                    <a href="{{ $toggle('en') }}"
-                       class="font-jetbrains-mono text-[11px] uppercase tracking-[0.14em] rounded-full px-3 py-1.5 transition-colors {{ $lang === 'en' ? 'bg-lime text-ink' : 'text-white/60 hover:text-white' }}">EN</a>
-                </div>
+            <div class="text-right">
                 <span class="font-jetbrains-mono text-[11px] uppercase tracking-[0.18em] text-white/40 tabular-nums">
                     {{ $lang === 'en' ? $total.' dispatches on file' : $total.' laporan tercatat' }}
                 </span>

@@ -74,7 +74,7 @@
                 <h3 class="font-fraunces text-lg text-[#14181A]">{{ $editingId ? 'Edit anggota' : 'Tambah anggota' }}</h3>
                 <button wire:click="$set('showModal', false)" type="button" class="text-[#9AA3A0] hover:text-[#14181A] text-xl leading-none">&times;</button>
             </div>
-            <form wire:submit="save" x-data="{ lang: 'id', setLang(next) { this.lang = next; this.$nextTick(() => window.dispatchEvent(new Event('resize'))); } }" class="px-6 py-5 space-y-4">
+            <form wire:submit="save" x-data="{ lang: 'id', setLang(next) { this.lang = next; this.$nextTick(() => window.dispatchEvent(new CustomEvent('tl-editor:activate', { detail: { id: next === 'id' ? 'bio' : 'bio_en' } }))); } }" class="px-6 py-5 space-y-4">
                 <div class="flex items-center gap-2">
                     <button type="button" @click="setLang('id')"
                             :class="lang === 'id' ? 'bg-[#1C3A14] text-cream' : 'text-[#5C6770] hover:text-[#14181A] border border-[#E3E6E4]'"
@@ -117,6 +117,18 @@
                     <input wire:model="photo_upload" type="file" accept="image/*"
                            class="text-sm text-[#5C6770] file:mr-3 file:py-1.5 file:px-3 file:rounded-full file:border-0 file:bg-[#1C3A14]/10 file:text-[#1C3A14] file:text-xs file:font-medium file:cursor-pointer">
                     @error('photo_upload') <p class="text-[#C84A26] text-xs mt-1">{{ $message }}</p> @enderror
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-[#5C6770] mb-1.5">GitHub URL</label>
+                        <input wire:model="github_url" type="url" placeholder="https://github.com/username" class="w-full rounded-lg border border-[#E3E6E4] bg-[#F4F6F5] px-3 py-2.5 text-sm focus:border-[#1C3A14] focus:ring-2 focus:ring-[#1C3A14]/20 outline-none">
+                        @error('github_url') <p class="text-[#C84A26] text-xs mt-1">{{ $message }}</p> @enderror
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-[#5C6770] mb-1.5">Instagram URL</label>
+                        <input wire:model="instagram_url" type="url" placeholder="https://instagram.com/username" class="w-full rounded-lg border border-[#E3E6E4] bg-[#F4F6F5] px-3 py-2.5 text-sm focus:border-[#1C3A14] focus:ring-2 focus:ring-[#1C3A14]/20 outline-none">
+                        @error('instagram_url') <p class="text-[#C84A26] text-xs mt-1">{{ $message }}</p> @enderror
+                    </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div>

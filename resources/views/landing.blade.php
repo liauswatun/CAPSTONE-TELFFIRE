@@ -3,7 +3,7 @@
 @section('content')
     {{-- Hero --}}
     <section id="top" class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20" style="background-image: linear-gradient(to bottom, rgba(23,16,9,0.55) 0%, rgba(23,16,9,0.4) 60%, rgba(23,16,9,0.7) 100%), url('{{ asset('img/APILANDING.jpg') }}'); background-size: cover; background-position: center;">
-        <h1 class="font-fraunces text-5xl md:text-7xl text-lime font-normal leading-tight max-w-3xl">
+        <h1 class="font-fraunces text-5xl md:text-7xl text-cream font-normal leading-tight max-w-3xl">
             {!! $lang === 'en'
                 ? 'Fire monitoring<br><em class="not-italic">for Sumatra</em>'
                 : 'Pemantauan Titik Kebakaran<br><em class="not-italic">di Sumatera</em>' !!}
@@ -51,7 +51,7 @@
                 <div class="text-sage text-sm mt-1 font-medium">{{ $lang === 'en' ? 'Provinces monitored' : 'Provinsi dipantau' }}</div>
             </div>
             <div>
-                <div class="font-fraunces text-5xl font-normal text-forest">{{ $lang === 'en' ? '91,355' : '91.355' }}</div>
+                <div class="font-fraunces text-5xl font-normal text-forest">{{ $lang === 'en' ? '23.025' : '23.025' }}</div>
                 <div class="text-sage text-sm mt-1 font-medium">{{ $lang === 'en' ? 'Fire points' : 'Titik kebakaran' }}</div>
             </div>
             <div>

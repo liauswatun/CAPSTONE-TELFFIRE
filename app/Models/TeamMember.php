@@ -14,6 +14,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $role
  * @property string|null $bio
  * @property string|null $photo
+ * @property string|null $github_url
+ * @property string|null $instagram_url
  * @property string|null $role_en
  * @property string|null $bio_en
  * @property int $sort_order
@@ -26,7 +28,7 @@ class TeamMember extends Model
 
     protected $fillable = [
         'name', 'role', 'bio', 'photo', 'sort_order', 'is_active',
-        'role_en', 'bio_en',
+        'role_en', 'bio_en', 'github_url', 'instagram_url',
     ];
 
     protected $casts = [

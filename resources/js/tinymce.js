@@ -45,9 +45,16 @@ window.tinymceField = (options) => ({
     model: options.model,
     height: options.height || 300,
     init() {
-        this.$nextTick(() => {
+        const start = () => this.$nextTick(() => {
             initTinyEditor(options.id, () => this.model, (v) => { this.model = v; }, this.height);
         });
+
+        start();
+
+        window.addEventListener('tl-editor:activate', (e) => {
+            if (e.detail?.id === options.id) start();
+        });
+
         this.$watch('model', (v) => {
             const ed = tinymce.get(options.id);
             if (ed && ed.getContent() !== v) ed.setContent(v || '');

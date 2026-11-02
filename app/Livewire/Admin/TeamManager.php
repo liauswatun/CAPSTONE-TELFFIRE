@@ -32,6 +32,10 @@ class TeamManager extends Component
 
     public ?string $photo = '';
 
+    public ?string $github_url = '';
+
+    public ?string $instagram_url = '';
+
     public $photo_upload = null;
 
     public int $sort_order = 0;
@@ -56,6 +60,8 @@ class TeamManager extends Component
         $this->role_en = (string) $member->role_en;
         $this->bio_en = (string) $member->bio_en;
         $this->photo = (string) $member->photo;
+        $this->github_url = (string) $member->github_url;
+        $this->instagram_url = (string) $member->instagram_url;
         $this->sort_order = (int) $member->sort_order;
         $this->is_active = (bool) $member->is_active;
         $this->photo_upload = null;
@@ -70,9 +76,11 @@ class TeamManager extends Component
             'bio' => ['nullable', 'string', 'max:1000'],
             'role_en' => ['nullable', 'string', 'max:120'],
             'bio_en' => ['nullable', 'string', 'max:1000'],
+            'github_url' => ['nullable', 'url', 'max:255'],
+            'instagram_url' => ['nullable', 'url', 'max:255'],
             'sort_order' => ['nullable', 'integer', 'min:0', 'max:9999'],
             'is_active' => ['boolean'],
-            'photo_upload' => ['nullable', 'image', 'max:2048'],
+            'photo_upload' => ['nullable', 'image', 'max:10048'],
         ]);
 
         $data = [
@@ -81,6 +89,8 @@ class TeamManager extends Component
             'bio' => $validated['bio'],
             'role_en' => $validated['role_en'],
             'bio_en' => $validated['bio_en'],
+            'github_url' => $validated['github_url'],
+            'instagram_url' => $validated['instagram_url'],
             'sort_order' => $validated['sort_order'],
             'is_active' => $validated['is_active'],
         ];
@@ -134,6 +144,8 @@ class TeamManager extends Component
         $this->role_en = '';
         $this->bio_en = '';
         $this->photo = '';
+        $this->github_url = '';
+        $this->instagram_url = '';
         $this->photo_upload = null;
         $this->sort_order = 0;
         $this->is_active = true;

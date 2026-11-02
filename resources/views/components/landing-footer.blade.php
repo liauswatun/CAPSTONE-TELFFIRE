@@ -4,12 +4,8 @@
             {{-- Brand --}}
             <div class="md:col-span-1">
                 <div class="flex items-center gap-2 mb-4">
-                    <div class="w-8 h-8 rounded-full bg-lime flex items-center justify-center">
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                            <path d="M9 2C5.5 2 3 5 3 9c0 2 .8 3.8 2 5" stroke="#20140D" stroke-width="1.5" stroke-linecap="round"/>
-                            <path d="M9 2c3.5 0 6 3 6 7 0 2-.8 3.8-2 5" stroke="#20140D" stroke-width="1.5" stroke-linecap="round"/>
-                            <path d="M9 2v14M6 7s1.5 1 3 1 3-1 3-1M5 12s1.5 1 4 1 4-1 4-1" stroke="#20140D" stroke-width="1.5" stroke-linecap="round"/>
-                        </svg>
+                    <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center overflow-hidden">
+                        <img src="{{ asset('img/LOGOFIRE.png') }}" alt="TELF Logo" class="w-full h-full object-cover">
                     </div>
                     <div class="leading-tight">
                         <div class="font-fraunces text-sm font-semibold">TELF</div>

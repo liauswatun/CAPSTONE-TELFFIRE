@@ -8,17 +8,16 @@
 
 @section('content')
     {{-- Hero --}}
-    <section class="relative min-h-[70vh] flex flex-col items-center justify-center text-center px-6 pt-20" style="background-image: linear-gradient(to bottom, rgba(23,16,9,0.6) 0%, rgba(23,16,9,0.55) 55%, rgba(23,16,9,0.85) 100%), url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=1600&h=900&fit=crop&auto=format'); background-size: cover; background-position: center;">
-        <p class="text-lime text-sm font-medium tracking-widest uppercase mb-4">Frequently Asked Questions</p>
+    <section class="relative min-h-[70vh] flex flex-col items-center justify-center text-center px-6 pt-20" style="background-image: linear-gradient(to bottom, rgba(23,16,9,0.6) 0%, rgba(23,16,9,0.55) 55%, rgba(23,16,9,0.85) 100%), url('{{ asset('img/APILANDING.jpg') }}'); background-size: cover; background-position: center;">
         <h1 class="font-fraunces text-5xl md:text-7xl text-cream font-normal leading-tight max-w-4xl">
             {!! $lang === 'en'
                 ? 'Answers for every<br><em class="not-italic">question.</em>'
-                : 'Jawaban untuk setiap<br><em class="not-italic">pertanyaan.</em>' !!}
+                : 'Pertanyaan Yang<br><em class="not-italic">Sering ditanyakan.</em>' !!}
         </h1>
         <p class="mt-6 text-white/70 text-base md:text-lg max-w-xl leading-relaxed">
             {{ $lang === 'en'
                 ? 'What you need to know about TELF — the data, the map, and how to use the forest-loss monitoring platform.'
-                : 'Hal-hal yang perlu Anda ketahui tentang TELF — data, peta, dan cara memanfaatkan platform pemantauan kehilangan hutan.' }}
+                : 'Hal-hal yang perlu Anda ketahui tentang TELF — data, peta, dan cara memanfaatkan platform pemantauan titik kebakaran.' }}
         </p>
     </section>
 
